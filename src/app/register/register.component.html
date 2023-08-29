@@ -1,0 +1,24 @@
+<form>
+    <div class="form-group">
+        <label for="userName">Username</label>
+        <input type="text" [(ngModel)]="userName" [ngModelOptions]="{standalone:true}" class="form-control"
+            id="userName" placeholder="Unesite username">
+
+    </div>
+    <div class="form-group">
+        <label for="userFirstName">Ime</label>
+        <input type="text" [(ngModel)]="userFirstName" [ngModelOptions]="{standalone:true}" class="form-control"
+            id="userFirstName" placeholder="Unesite svoje ime:">
+    </div>
+    <div class="form-group">
+        <label for="userLastName">Prezime</label>
+        <input type="text" [(ngModel)]="userLastName" [ngModelOptions]="{standalone:true}" class="form-control"
+            id="userLastName" placeholder="Unesite prezime">
+    </div>
+    <div class="form-group">
+        <label for="userPassword">Sifra</label>
+        <input type="password" [(ngModel)]="userPassword" [ngModelOptions]="{standalone:true}" class="form-control"
+            id="userPassword" placeholder="Unesite sifru">
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" (click)="register()">Registruj se!</button>
+</form>

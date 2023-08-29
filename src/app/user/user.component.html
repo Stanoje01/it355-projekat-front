@@ -1,0 +1,14 @@
+<form>
+    <div class="form-group mt-5">
+        <label for="naslov">Unesite naslov komentara</label>
+        <input type="text" [(ngModel)]="naslov" [ngModelOptions]="{standalone:true}" class="form-control" id="naslov"
+            aria-describedby="naslov" placeholder="Unesite naslov">
+    </div>
+    <div class="form-group mt-5">
+        <label for="tekst">Komentar</label>
+        <input type="text" [(ngModel)]="tekst" [ngModelOptions]="{standalone : true}" class="form-control"
+            id="tekst" placeholder="Unesite komentar">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-5" (click)="save()">Posalji komentar</button>
+</form>

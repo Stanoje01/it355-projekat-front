@@ -1,0 +1,39 @@
+<div class="containter mt-4">
+
+    <div class="form-group mt-5">
+        <label for="naslov">Unesite naslov komentara</label>
+        <input type="text" [(ngModel)]="naslov" [ngModelOptions]="{standalone:true}" class="form-control" id="naslov"
+            aria-describedby="naslov" placeholder="Unesite naslov">
+    </div>
+    <div class="form-group mt-5">
+        <label for="tekst">Komentar</label>
+        <input type="text" [(ngModel)]="tekst" [ngModelOptions]="{standalone : true}" class="form-control"
+            id="tekst" placeholder="Unesite komentar">
+    </div>
+
+    <button type="submit" class="btn btn-warning mt-5" (click)="UpdateRecords()">Update</button>
+    <h1>Komentari tabela</h1>
+
+    <table class="table">
+        <thead>
+            <h1 *ngIf="!isResultLoaded"> Loading.......</h1>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Naslov</th>
+                <th scope="col">Tekst</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let CommentItem of CommentArray">
+                <th scope="row">{{CommentItem.commentId}}</th>
+                <td>{{CommentItem.naslov | uppercase}} </td>
+                <td>{{CommentItem.tekst}}</td>
+
+                <td>
+                    <button type="button" class="btn btn-success" (click)="setUpdate(CommentItem)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="setDelete(CommentItem)">Delete</button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
